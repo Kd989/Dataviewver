@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+
+
 import './App.css';
+import Bavbar from './components/Bavbar';
+import Productlist from './components/Productlist';
+import ProductContextProvider from './context/Productcontext';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  return (<>
+  
+    <Bavbar/>
+    <div className="">
+      <div className="table-responsive">
+        <div className="table-wrapper">
+          <ProductContextProvider>
+
+            <Productlist />
+          </ProductContextProvider>
+        </div>
+      </div >
     </div>
+    </>
+
+
   );
 }
 
