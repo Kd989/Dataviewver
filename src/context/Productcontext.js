@@ -11,16 +11,20 @@ const ProductContextProvider = (props)=>{
 
 
 
-    function getData() {
+   
+    useEffect(() => {
+         function getData() {
+        console.log("asdjas");
+        
         axios.get("https://dummyjson.com/products")
+         
             .then((res) => {
                 console.log(res.data.products);
                 setData(res.data.products)
             })
     }
-    useEffect(() => {
         getData()
-    }, [data])
+    }, [])
 
     const updateProduct = (id, updatedProdut)=>{
         setData(data.map(datas=>datas.id === id ? updatedProdut : datas))
